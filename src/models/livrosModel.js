@@ -21,7 +21,9 @@ export const criar = async (dado) => {
             saga: dado.saga,
             paginas: dado.paginas,
             editora: dado.editora,
-            avaliacao: dado.avaliacao
+            avaliacao: dado.avaliacao,
+            subgenero: dado.subgenero,
+            anoPublicacao: dado.anoPublicacao
         }
     })
 }
@@ -41,7 +43,9 @@ export const atualizar = async (id, dado) => {
             ...(dado.saga && { saga: dado.saga }),
             ...(dado.paginas && { paginas: dado.paginas }),
             ...(dado.editora && { editora: dado.editora }),
-            ...(dado.avaliacao && { avaliacao: dado.avaliacao })
+            ...(dado.avaliacao && { avaliacao: dado.avaliacao }),
+            ...(dado.subgenero && { subgenero: dado.subgenero }),
+            ...(dado.anoPublicacao && { anoPublicacao: dado.anoPublicacao})
         }
     })
 }

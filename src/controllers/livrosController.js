@@ -26,12 +26,6 @@ export const listarTodos = async (req, res) => {
     }
 }
 
-if (subgenero) {
-    resultado = resultado.filter(livro => 
-        livro.subgenero.toLowerCase().includes(subgenero.toLowerCase())
-    );
-}
-
 export const listarUm = async (req, res) => {
     try {
         const id = parseInt(req.params.id);
@@ -61,9 +55,13 @@ export const listarUm = async (req, res) => {
 
 export const criar = async (req, res) => {
     try {
-        const { titulo, autor, saga, paginas, editora, avaliacao } = req.body;
+        const { titulo, autor, saga, paginas, editora, avaliacao, anoPublicacao, subgenero } = req.body;
         
-        const dado = { titulo, autor, saga, paginas, editora, avaliacao }
+        const dado = { titulo, autor, saga, paginas, editora, avaliacao, anoPublicacao, subgenero }
+
+    if (paginas < 50) {
+        console.log("O número de páginas deve ser maior que 50!");
+    }
 
     const novoLivro = await livrosController.criar(req.body)
     
@@ -79,6 +77,7 @@ export const criar = async (req, res) => {
         })
     }
 }
+
 
 export const deletar = async (req, res) => {
     try {
