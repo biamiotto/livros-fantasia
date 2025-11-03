@@ -1,0 +1,29 @@
+{
+  "name": "catalogo-livros",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cls && nodemon server.js",
+    "studio": "npx prisma studio",
+    "seed": "node prisma/seed.js"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
+  "keywords": [
+    "SENAI",
+    "prova"
+  ],
+  "author": "Beatriz Miotto",
+  "license": "MIT",
+  "description": "Prova CRUD completo com banco de dados",
+  "dependencies": {
+    "@prisma/client": "^6.18.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10",
+    "prisma": "^6.18.0"
+  }
+}
